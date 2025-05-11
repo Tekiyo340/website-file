@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teki personal- Creative Programmer website</title>
+
+    <!-- AOS Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- Google Fonts (Optional: Example using Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="./teki.css">
+</head>
+
+<body>
+
+    <!-- ================= Header ================= -->
+    <header id="home">
+        <div class="animated-gradient-header"></div>
+        <div class="header-content-wrapper">
+            <div class="header-text" data-aos="fade-right" data-aos-delay="200">
+                <h1>Hi, I'm Tekalign</h1>
+                <p>Passionate Programmer & Web Developer</p>
+                <a href="#contact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="600">Let's Collaborate</a>
+            </div>
+            <div class="header-image" data-aos="fade-left" data-aos-delay="400">
+                <img src="images/profile.jpg" alt="Your Name - Profile Picture" class="profile-image">
+            </div>
+        </div>
+        <!-- Scroll Down Indicator (Optional) -->
+        <a href="#about" class="scroll-down-link" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </header>
+
+    <!-- ================= Navigation ================= -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">@IT</a>
+            <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="auth-links-desktop">
+                    <a href="#" class="nav-link auth-link">Login</a>
+                    <a href="#" class="nav-link auth-link register-btn">Register</a>
+                </li>
+            </ul>
+            <!-- Auth Links for Mobile (appear inside the slide-out menu) -->
+            <div class="auth-links-mobile">
+                <a href="#" class="nav-link auth-link">Login</a>
+                <a href="#" class="nav-link auth-link register-btn">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= Main Content ================= -->
+    <main>
+        <!-- == About Section == -->
+        <section id="about" class="content-section">
+            <h2 data-aos="fade-up">About Me</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="200">
+                    <img src="#" alt=" I'm Tekalign "> <!-- Use same or different image -->
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <h3>Hi, I'm Tekalign!</h3>
+                    <p>I'm a self-motivated and detail-oriented programmer with a strong foundation in web development
+                        technologies. I thrive on solving complex problems and turning ideas into functional, elegant
+                        digital experiences.</p>
+                    <p>My journey into programming started with [mention a starting point or passion]. Since then, I've
+                        continuously honed my skills in both front-end and back-end development, always eager to learn
+                        new technologies and best practices.</p>
+                    <p>I believe in writing clean, maintainable code and collaborating effectively to achieve project
+                        goals. Let's build something amazing together!</p>
+                    <div class="about-stats" data-aos="fade-up" data-aos-delay="400">
+                        <div><span>2+</span> Years Experience</div>
+                        <div><span>20+</span> Projects Completed</div>
+                        <div><span>95%</span> Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- == Services Section == -->
+        <section id="services" class="content-section alt-bg">
+            <h2 data-aos="fade-up">Services I Provide</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-laptop-code fa-3x service-icon"></i>
+                    <h3>Full-Stack Development</h3>
+                    <p>End-to-end web application development using modern stacks (MERN, LAMP, etc.).</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-palette fa-3x service-icon"></i>
+                    <h3>Frontend Magic</h3>
+                    <p>Creating interactive, responsive, and beautiful user interfaces with React, Vue, or Angular.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-server fa-3x service-icon"></i>
+                    <h3>Backend Architecture</h3>
+                    <p>Building secure, scalable server-side logic and APIs with Node.js, Python, PHP.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-database fa-3x service-icon"></i>
+                    <h3>Database Management</h3>
+                    <p>Designing and optimizing relational (SQL) and non-relational (NoSQL) databases.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- == Skills Section == -->
+        <section id="skills" class="content-section">
+            <h2 data-aos="fade-up">Technical Proficiency</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Frontend</h4>
+                    <div class="skills-list">
+                        <span>HTML5</span><span>CSS3/Sass</span><span>JavaScript
+                            (ESNext)</span><span>React</span><span>Vue.js</span><span>Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Backend</h4>
+                    <div class="skills-list">
+                        <span>Node.js</span><span>Express</span><span>Python</span><span>Django/Flask</span><span>PHP</span><span>Laravel</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <h4>Databases & Tools</h4>
+                    <div class="skills-list">
+                        <span>SQL (PostgreSQL,
+                            MySQL)</span><span>MongoDB</span><span>Git/GitHub</span><span>Docker</span><span>AWS
+                            Basics</span><span>REST APIs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- == Testimonials Section == -->
+        <section id="testimonials" class="content-section alt-bg">
+            <h2 data-aos="fade-up">Client Feedback</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="testimonial-image-frame">
+                        <img src="https://via.placeholder.com/100/8f8e8d/ffffff?text=JD" alt="Lukas kebede">
+                        <!-- Placeholder or real image -->
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>
+                            <p>"Absolutely brilliant! Tekalign transformed our vision into a reality with skill and
+                                professionalism. Highly recommended."</p>
+                        </blockquote>
+                        <cite><strong>Lukas kebede</strong> - CEO, Innovate Inc.</cite>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="flip-left" data-aos-delay="350">
+                    <div class="testimonial-image-frame">
+                        <img src="https://via.placeholder.com/100/6a6a6a/ffffff?text=MS" alt="Hamelemale Abate">
+                        <!-- Placeholder or real image -->
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>
+                            <p>"Working with Tekalign was seamless. They delivered high-quality code on time and
+                                communicated effectively throughout."</p>
+                        </blockquote>
+                        <cite><strong>Hamelemale Abate</strong> - Tech Lead, Solutions Ltd.</cite>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="testimonial-image-frame">
+                        <img src="https://via.placeholder.com/100/a0a0a0/ffffff?text=SP" alt="Haile Tadese">
+                        <!-- Placeholder or real image -->
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>
+                            <p>"Deep technical knowledge combined with a creative approach. Tekalign solved
+                                challenges we didn't even know we had!"</p>
+                        </blockquote>
+                        <cite><strong>Haile Tadese</strong> - Founder, Creative Hub</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- == Contact Section == -->
+        <section id="contact" class="content-section">
+            <h2 data-aos="fade-up">Get In Touch</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <p class="contact-intro" data-aos="fade-up" data-aos-delay="150">Have a project idea or just want to chat?
+                Feel free to reach out!</p>
+            <form action="#" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <i class="form-icon fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <i class="form-icon fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    <i class="form-icon fas fa-tag"></i>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                    <i class="form-icon fas fa-pen textarea-icon"></i>
+                </div>
+                <button type="submit" class="btn btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-col">
+                    <h4>About IT</h4> <!-- Use Initials -->
+                    <p>Creative programmer dedicated to building efficient, scalable, and beautiful web solutions. Let's
+                        bring your ideas to life.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a>
+                    </div>
+                </div>
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#about">About Me</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <!-- Column 3: Services -->
+                <div class="footer-col">
+                    <h4>Core Services</h4>
+                    <a href="#services">Web Development</a>
+                    <a href="#services">API Development</a>
+                    <a href="#services">Frontend Design</a>
+                    <a href="#services">Backend Solutions</a>
+                    <a href="#services">Consulting</a>
+                </div>
+                <!-- Column 4: Resources -->
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Blog (Coming Soon)</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">GitHub Repos</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <!-- Column 5: Contact -->
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Hossana, ETHIOPIA</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:youremail@example.com">tekiyeman@gmail.com</a>
+                    </p>
+                    <p><i class="fas fa-phone"></i> (Optional) +251 722 401 455 </p>
+                    <a href="#contact" class="btn btn-footer-contact">Send a Message</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="current-year"></span> Tekalign. All Rights Reserved. Built with <i class="fas fa-heart"
+                        style="color: #e73c7e;"></i>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Your Custom JS -->
+    <script src="./teki.js"></script>
+</body>
+
+</html>
