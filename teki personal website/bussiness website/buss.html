@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Business Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Feather Icons (for menu toggle, etc.) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="./buss.css">
+</head>
+
+<body>
+
+    <!-- ======================= HEADER ======================= -->
+    <header class="site-header sticky-header">
+        <div class="container header-container">
+            <div class="logo animate-header-item">
+                <a href="#">TECHNO</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li class="animate-header-item" style="animation-delay: 0.1s;"><a href="#home">Home</a></li>
+                    <li class="animate-header-item" style="animation-delay: 0.2s;"><a href="#services">Services</a></li>
+                    <li class="animate-header-item" style="animation-delay: 0.3s;"><a href="#online">Online</a></li>
+                    <li class="animate-header-item" style="animation-delay: 0.4s;"><a
+                            href="#testimonials">Testimonial</a></li>
+                    <li class="animate-header-item" style="animation-delay: 0.5s;"><a href="#about">About</a></li>
+                    <li class="animate-header-item" style="animation-delay: 0.6s;"><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-secondary animate-header-item" style="animation-delay: 0.7s;">Login</a>
+                <a href="#" class="btn btn-primary animate-header-item" style="animation-delay: 0.8s;">Register</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <i data-feather="menu"></i>
+                <i data-feather="x" style="display:none;"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======================= MAIN CONTENT ======================= -->
+    <main>
+        <!-- SECTION: Hero (Beauty Main Animated Part) -->
+        <section id="home" class="hero-section">
+            <div class="hero-background-animation">
+                <!-- You can add complex animated SVG, particles.js, or video here -->
+                <div class="shape shape1"></div>
+                <div class="shape shape2"></div>
+                <div class="shape shape3"></div>
+            </div>
+            <div class="container hero-content">
+                <h1 class="animate-on-load" data-delay="0.2s">Hello Programmer360 with @Tekalign</h1>
+                <p class="animate-on-load" data-delay="0.5s">We build beautiful, responsive, and animated experiences
+                    that drive results.</p>
+                <a href="#services" class="btn btn-primary btn-large animate-on-load" data-delay="0.8s">Click Me!</a>
+            </div>
+        </section>
+
+        <!-- SECTION: Services (Placeholder) -->
+        <section id="services" class="content-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Our Services</h2>
+                <div class="grid-3-col">
+                    <div class="card animate-on-scroll" data-delay="0.1s">
+                        <h3>Manitanance</h3>
+                        <p>Description for service one.</p>
+                    </div>
+                    <div class="card animate-on-scroll" data-delay="0.3s">
+                        <h3>Service 2</h3>
+                        <p>Description for service two.</p>
+                    </div>
+                    <div class="card animate-on-scroll" data-delay="0.5s">
+                        <h3>Service 3</h3>
+                        <p>Description for service three.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: Online (Placeholder) -->
+        <section id="online" class="content-section bg-light">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Go Online With Us</h2>
+                <p class="text-center animate-on-scroll" data-delay="0.2s">Details about online presence, tools, or
+                    platforms.</p>
+            </div>
+        </section>
+
+        <!-- SECTION: Testimonials (Placeholder) -->
+        <section id="testimonials" class="content-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">What Our Clients Say</h2>
+                <p class="text-center animate-on-scroll" data-delay="0.2s">Testimonial slider or cards would go here.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION: About Us (Placeholder) -->
+        <section id="about" class="content-section bg-light">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">About Us</h2>
+                <p class="text-center animate-on-scroll" data-delay="0.2s">Information about your company.</p>
+            </div>
+        </section>
+
+        <!-- SECTION: Contact (Placeholder) -->
+        <section id="contact" class="content-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Contact Us</h2>
+                <p class="text-center animate-on-scroll" data-delay="0.2s">Contact form or details here.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-column animate-on-scroll">
+                <h4>About Company</h4>
+                <p>We are dedicated to providing top-notch services and innovative solutions to help your business grow
+                    and succeed.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-column animate-on-scroll" data-delay="0.2s">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column animate-on-scroll" data-delay="0.4s">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">SEO Optimization</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column animate-on-scroll" data-delay="0.6s">
+                <h4>Contact Info</h4>
+                <p><i data-feather="map-pin" class="icon-left"></i> 123 Business Rd, City</p>
+                <p><i data-feather="phone" class="icon-left"></i> (123) 456-7890</p>
+                <p><i data-feather="mail" class="icon-left"></i> info@yourcompany.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Hello Programmer360. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace(); // Initialize Feather Icons
+    </script>
+    <script src="./buss.js"></script>
+</body>
+
+</html>

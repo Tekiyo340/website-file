@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hami personal website</title>
+
+    <!-- AOS Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- Google Fonts (Optional: Example using Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="./hame.css">
+</head>
+
+<body>
+
+    <!-- ================= Header ================= -->
+    <header id="home">
+        <div class="animated-gradient-header"></div>
+        <div class="header-content-wrapper">
+            <div class="header-text" data-aos="fade-right" data-aos-delay="200">
+                <h1>Welcome to my website </h1>
+                <p>Passionate vedio and photo editor</p>
+                <a href="#contact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="600">contact me!!</a>
+            </div>
+            <div class="header-image" data-aos="fade-left" data-aos-delay="400">
+                <img src="./Screenshot_20250505-160316[1].jpg" class="profile-image">
+            </div>
+        </div>
+        <!-- Scroll Down Indicator (Optional) -->
+        <a href="#about" class="scroll-down-link" aria-label="Scroll down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </header>
+
+    <!-- ================= Navigation ================= -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">@HAMI</a>
+            <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="auth-links-desktop">
+                    <a href="#" class="nav-link auth-link">Login</a>
+                    <a href="#" class="nav-link auth-link register-btn">Register</a>
+                </li>
+            </ul>
+            <!-- Auth Links for Mobile (appear inside the slide-out menu) -->
+            <div class="auth-links-mobile">
+                <!-- <a href="#" class="nav-link auth-link">Login</a>
+                <a href="#" class="nav-link auth-link register-btn">Register</a> -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= Main Content ================= -->
+    <main>
+        <!-- == About Section == -->
+        <section id="about" class="content-section">
+            <h2 data-aos="fade-up">About Me</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="200">
+                    <img src="./Screenshot_20250505-160316[1].jpg" alt=" I'm Hamelmal ">
+                    <!-- Use same or different image -->
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <h3>Hi, I'm Hamelmal</h3>
+                    <p>I'm skilled in Photoshop, transforming, retouching, and compositing images to achieve specific
+                        creative or technical
+                        goals. I work with layers, masks, color correction, and a whole suite of tools to make visuals
+                        pop, fix imperfections,
+                        or create entirely new realities.</p>
+                    <p>As a Photoshopper, I combine technical know-how with a creative eye. Whether it's cleaning up a
+                        portrait, building a
+                        complex composite, or preparing images for print/web, I use Photoshop as my primary environment
+                        to manipulate and
+                        perfect pixels..</p>
+
+                    <div class="about-stats" data-aos="fade-up" data-aos-delay="400">
+                        <div><span>2+</span> Years Experience</div>
+                        <div><span>2+</span> Projects Completed</div>
+                        <div><span>94%</span> Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- == Services Section == -->
+        <section id="services" class="content-section alt-bg">
+            <h2 data-aos="fade-up">@Hami Serivice </h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-laptop-code fa-3x service-icon"></i>
+                    <h3>PhotoShoping</h3>
+                    <p>Photo and video editing(@ham shop)</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-palette fa-3x service-icon"></i>
+                    <h3>Styling photo</h3>
+                    <p>Animation Movie, Dark Web seeming, and beautiful Editing Emoji.</p>
+                </div>
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-server fa-3x service-icon"></i>
+                    <h3>Editing Phyton Code With Video </h3>
+                    <p>Coding Promotion Style With PhotoShoping</p>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- == Skills Section == -->
+        <section id="skills" class="content-section">
+            <h2 data-aos="fade-up">@HAMI Proficiency</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h4>@ CAMERA</h4>
+                    <div class="skills-list">
+                        <span>Capture@All</span><span>Capture-Nature</span>
+                        <span>Capture-Art</span>
+                        <span>Capture-Background</span>
+                        <span>Capture-Stayling</span>
+                        <span>Capture-Green plant</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h4>@ VIDEO</h4>
+                    <div class="skills-list">
+                        <span>Video Effect</span>
+                        <span>Video Casting</span>
+                        <span>Video Motion</span>
+                        <span>Video Cutting</span>
+                        <span>Video Editing</span>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <!-- == Testimonials Section == -->
+        <section id="testimonials" class="content-section alt-bg">
+            <h2 data-aos="fade-up">Client Feedback</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="testimonial-image-frame">
+                        <img src="https://via.placeholder.com/100/8f8e8d/ffffff?text=JD" alt="Hiwot Asdesach">
+                        <!-- Placeholder or real image -->
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>
+                            <p>"Absolutely brilliant! Hamelmal transformed our vision into a reality with skill and
+                                professionalism. Highly recommended."</p>
+                        </blockquote>
+                        <cite><strong>Hiwot Asdesach</strong> - CEO, Innovate Inc.</cite>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="flip-left" data-aos-delay="350">
+                    <div class="testimonial-image-frame">
+                        <img src="https://via.placeholder.com/100/6a6a6a/ffffff?text=MS" alt="Worku Alemayehu">
+                        <!-- Placeholder or real image -->
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>
+                            <p>"Working with Tekalign was seamless. They delivered high-quality code on time and
+                                communicated effectively throughout."</p>
+                        </blockquote>
+                        <cite><strong>Worku Alemayehu</strong> - Tech Lead, Solutions Ltd.</cite>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="flip-left" data-aos-delay="500">
+                    <div class="testimonial-image-frame">
+                        <img src="https://via.placeholder.com/100/a0a0a0/ffffff?text=SP" alt="Fkadu Asdesach">
+                        <!-- Placeholder or real image -->
+                    </div>
+                    <div class="testimonial-content">
+                        <blockquote>
+                            <p>"Deep technical knowledge combined with a creative approach. Hamelmal solved
+                                challenges we didn't even know we had!"</p>
+                        </blockquote>
+                        <cite><strong>Fkadu Asdesach</strong> - Founder, Creative Hub</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- == Contact Section == -->
+        <section id="contact" class="content-section">
+            <h2 data-aos="fade-up">Get In Touch</h2>
+            <div class="section-underline" data-aos="fade-up" data-aos-delay="100"></div>
+            <p class="contact-intro" data-aos="fade-up" data-aos-delay="150">Have a project idea or just want to chat?
+                Feel free to reach out!</p>
+            <form action="#" method="post" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <i class="form-icon fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <i class="form-icon fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    <i class="form-icon fas fa-tag"></i>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                    <i class="form-icon fas fa-pen textarea-icon"></i>
+                </div>
+                <button type="submit" class="btn btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-col">
+                    <h4>About me</h4> <!-- Use Initials -->
+                    <p> passionet with photoshoping for 1 year experiance</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a>
+                    </div>
+                </div>
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#about">About Me</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <!-- Column 3: Services -->
+                <div class="footer-col">
+                    <h4>Core Services</h4>
+                    <a href="#services">Video Editing</a>
+                    <a href="#services">Clip Editing</a>
+                    <a href="#services">Photo Editing</a>
+                    <a href="#services">Sound Mix</a>
+                    <a href="#services">Video Cutting</a>
+                </div>
+                <!-- Column 4: Resources -->
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">My future(Coming-Soon)</a>
+                    <a href="#">Schdule Stdying</a>
+                    <a href="#">GitHub Repos</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <!-- Column 5: Contact -->
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> ARBAMINCH, ETHIOPIA</p>
+                    <p><i class="fas fa-envelope"></i> <a
+                            href="mailto:youremail@example.com">asdesachhamelmaln@gmail.com</a>
+                    </p>
+                    <p><i class="fas fa-phone"></i> (Optional) +251 979 875 343 </p>
+                    <a href="#contact" class="btn btn-footer-contact">Send a Message</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="current-year"></span> Hamelmal. All Rights Reserved. Built with <i class="fas fa-heart"
+                        style="color: #e73c7e;"></i>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Your Custom JS -->
+    <script src="./hame.js"></script>
+</body>
+
+</html>

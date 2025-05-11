@@ -1,0 +1,47 @@
+/* h2 {
+    text-align: center;
+    color: black;
+}
+
+p {
+    text-align: center;
+    color: red;
+}
+
+body {
+    background-color: blue; */
+/* } */
+
+
+
+#aa {
+    text-align: center;
+    color: black;
+}
+
+#bb {
+    text-align: center;
+    color: red;
+}
+
+/* in class */
+#me {
+    text-align: center;
+    color: RED;
+    font-size: 18px;
+}
+
+.ab {
+    text-align: center;
+    color: green;
+    font-size: 36px;
+}
+
+.body {
+    background-color: orange;
+}
+
+/* in an id */
+#body {
+    background-color: blue;
+}

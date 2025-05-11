@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lab.css">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./lab.css">
+
+
+    <script lang="JavaScript">{
+            // function message() {
+            //     alert("this is aleart message");
+
+            function add() {
+                var op1 = parseInt(document.test.fnum.value);
+                var op2 = parseInt(document.test.snum.value);
+                var sum = 0;
+                sum = op1 / op2;
+                document.test.result.value = sum;
+            }
+        }
+
+
+
+        let x = 0;
+        let i;
+        let n;
+
+        document.write("Starting loops...<br>");
+
+
+        for (i = 1; i < 5; i++) {
+            document.write("Outer loop: i = " + i + "<br>");
+
+            for (n = 0; n < 3; n++) { // n will go from 0, 1, 2
+                x += n; // Add current n to x
+                document.write("  Inner loop: n = " + n + ", x is now " + x + "<br>");
+            }
+            document.write("  After inner loop, x is " + x + "<br>");
+        }
+
+        document.write("Finished loops. Final value of x: " + x + "<br>");
+
+        var age = 20;
+        if (age > 18) {
+            document.write("<b>qulifies for deriving</b>");
+        }
+
+
+
+    </script>
+
+
+</head>
+
+<body class="body">
+
+    <form action="" name="test" method="get">
+
+        fristnum: <input type="text" name="fnum"><br>
+        lastnum: <input type="text" name="snum"><br>
+        result: <input type="text" name="result"><br>
+        <input type="button" name="adder" value="add" onclick="add()">
+    </form>
+
+
+
+
+
+</body>
+
+</html>
