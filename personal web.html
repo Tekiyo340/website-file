@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Animated teki Personal Website</title>
+    <style>
+        /* Reset & basics */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #121214;
+            color: #eee;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, #1f1f25, #2a2a36);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: #00ff99;
+            user-select: none;
+            cursor: default;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            position: relative;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 6px 4px;
+            color: #ddd;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00ff99;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background: #00ff99;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        /* Mobile Nav Toggle */
+        .menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 28px;
+            height: 22px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .menu-btn span {
+            height: 3px;
+            background: #00ff99;
+            border-radius: 2px;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-btn.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Responsive Nav */
+        @media (max-width: 700px) {
+            nav {
+                position: fixed;
+                top: 60px;
+                right: 0;
+                background: #1a1a20;
+                height: calc(100vh - 60px);
+                width: 200px;
+                flex-direction: column;
+                align-items: start;
+                padding: 20px;
+                gap: 20px;
+                transform: translateX(100%);
+                transition: transform 0.4s ease;
+                box-shadow: -4px 0 12px rgba(0, 255, 153, 0.4);
+            }
+
+            nav.open {
+                transform: translateX(0);
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+        }
+
+        /* MAIN */
+        main {
+            padding-top: 60px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 100px 20px 80px;
+            background: radial-gradient(circle at center, #222227, #0a0a0d);
+            overflow: hidden;
+        }
+
+        /* Hero section with personal image */
+        .hero {
+            max-width: 900px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero .text-content {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #00ff99;
+            margin-bottom: 12px;
+        }
+
+        .hero .animated-text {
+            font-size: 1.5rem;
+            color: red;
+            margin-bottom: 24px;
+            min-height: 28px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            background: #00ff99;
+            color: #121214;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 15px rgba(0, 255, 153, 0.7);
+            border: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #00cc77;
+            box-shadow: 0 8px 20px rgba(0, 204, 119, 0.9);
+        }
+
+        /* Personal image style */
+        .personal-image-container {
+            flex-shrink: 0;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 25px 6px #00ff99aa;
+            border: 4px solid #00ff99cc;
+            animation: scaleIn 1.2s ease forwards;
+        }
+
+        .personal-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Typing effect for animated text */
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: #00ff99
+            }
+        }
+
+        .typing-text {
+            overflow: hidden;
+            border-right: 3px solid #00ff99;
+            white-space: nowrap;
+            width: 0;
+            animation: typing 3.5s steps(30, end) forwards, blink 0.7s step-end infinite;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #1a1a20, #0d0d11);
+            color: #bbb;
+            padding: 40px 20px 20px;
+            font-size: 0.9rem;
+            user-select: none;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-col {
+            flex: 1 1 160px;
+            min-width: 150px;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        .footer-col:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .footer-col:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .footer-col:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .footer-col:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .footer-col:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 14px;
+            font-weight: 700;
+            color: #00ff99;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #00ff99;
+        }
+
+        .footer-col .footer-contact {
+            line-height: 1.5;
+            color: #bbb;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 700px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-col {
+                min-width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Testimonial with client images */
+        #testimonial {
+            margin-top: 100px;
+            max-width: 720px;
+        }
+
+        #testimonial h2 {
+            color: #00ff99;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #testimonial .testimonial-slide-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #222227;
+            padding: 24px;
+            box-shadow: 0 2px 18px rgba(0, 255, 153, 0.25);
+        }
+
+        #testimonial-slider {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .testimonial-item {
+            flex: 0 0 100%;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            color: #ccc;
+        }
+
+        .client-photo {
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 15px 3px #00ff99aa;
+            border: 3px solid #00ff99cc;
+        }
+
+        .client-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-content {
+            flex: 1;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .testimonial-content b {
+            display: block;
+            margin-top: 15px;
+            font-weight: 700;
+            color: #00ff99;
+        }
+
+        #testimonial-controls {
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        #testimonial-controls button {
+            background: transparent;
+            border: none;
+            color: #00ff99;
+            cursor: pointer;
+            font-size: 28px;
+            margin: 0 18px;
+            transition: color 0.3s ease;
+            user-select: none;
+        }
+
+        #testimonial-controls button:hover {
+            color: #00cc77;
+        }
+
+        /* Login & Contact form styles */
+        form {
+            background: #222227;
+            padding: 24px 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 20px rgba(0, 255, 153, 0.3);
+            max-width: 380px;
+            margin: 0 auto;
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        form h2 {
+            color: #00ff99;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 2px solid #00ff99aa;
+            background: #121214;
+            color: #eee;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            resize: vertical;
+            min-height: 38px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        textarea {
+            min-height: 90px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #00ff99;
+            box-shadow: 0 0 10px #00ff9955;
+        }
+
+        .btn-submit {
+            display: block;
+            margin: 16px auto 0;
+            background: #00ff99;
+            color: #121214;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 2px;
+            box-shadow: 0 6px 15px rgba(0, 255, 153, 0.7);
+            border: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 280px;
+            font-size: 1.1rem;
+        }
+
+        .btn-submit:hover {
+            background-color: #00cc77;
+            box-shadow: 0 8px 20px rgba(0, 204, 119, 0.9);
+        }
+
+        .form-error {
+            color: #ff7777;
+            font-size: 0.9rem;
+            margin-top: 4px;
+            display: none;
+        }
+
+        /* Main responsive font sizes */
+        @media (max-width: 400px) {
+            .hero {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .animated-text {
+                font-size: 1rem;
+            }
+
+            .btn-primary {
+                padding: 12px 28px;
+                font-size: 0.95rem;
+            }
+
+            .client-photo {
+                width: 70px;
+                height: 70px;
+            }
+
+            .testimonial-content {
+                font-size: 1rem;
+            }
+
+            form {
+                padding: 20px 16px;
+                max-width: 100%;
+            }
+
+            .btn-submit {
+                max-width: 100%;
+                padding: 12px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">እንኳን ደና መጡ!✨✨</div>
+        <nav id="nav-menu">
+            <a href="#home" class="active">Home</a>
+            <a href="#service">Service</a>
+            <a href="#testimonial">Testimonial</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#login">Login</a>
+        </nav>
+        <div class="menu-btn" id="menu-btn" aria-label="Toggle menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="hero">
+            <div class="personal-image-container" aria-label="Personal photo of Tekalign">
+                <img src="#" alt="Photo of Tekalign" />
+            </div>
+            <div class="text-content">
+                <h1>Welcome TO Web Developement!</h1>
+                <div class="animated-text typing-text" aria-live="polite" aria-atomic="true"></div>
+                <p>ቆንጆ ወብሳይት እንድሁ ተንቀሻቃሽ እና ሳብ ከፈለጉ</p>
+                <p>0722401455 ይደዉሉ!</p>
+                <button class="btn-primary" onclick="alert('Contact form coming soon!')">ቀጣይ ገፅ!</button>
+            </div>
+        </section>
+
+        <section id="service" style="margin-top:100px; max-width:720px; text-align:center;">
+            <h2 style="color:#00ff99; margin-bottom:20px;">My Services</h2>
+            <div style="display:flex; gap:20px; flex-wrap: wrap; justify-content:center;">
+                <div style="background:#222227; border-radius:12px; padding:20px; flex:1 1 220px; box-shadow: 0 3px 15px rgba(0,255,153,0.2); transition: transform 0.3s ease; cursor:pointer;"
+                    onmouseenter="this.style.transform='translateY(-8px)'"
+                    onmouseleave="this.style.transform='translateY(0)'">
+                    <h3>Web Developer</h3>
+                    <p>Modern, responsive website build for your brand contact me more about me!.</p>
+                </div>
+                <div style="background:#222227; border-radius:12px; padding:20px; flex:1 1 220px; box-shadow: 0 3px 15px rgba(0,255,153,0.2); transition: transform 0.3s ease; cursor:pointer;"
+                    onmouseenter="this.style.transform='translateY(-8px)'"
+                    onmouseleave="this.style.transform='translateY(0)'">
+                    <h3>Animations</h3>
+                    <p>Smooth animations that engage visitors and tell your story.</p>
+                </div>
+                <div style="background:#222227; border-radius:12px; padding:20px; flex:1 1 220px; box-shadow: 0 3px 15px rgba(0,255,153,0.2); transition: transform 0.3s ease; cursor:pointer;"
+                    onmouseenter="this.style.transform='translateY(-8px)'"
+                    onmouseleave="this.style.transform='translateY(0)'">
+                    <h3>SEO Optimized</h3>
+                    <p>Helping your site rank higher on search engines effectively.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonial">
+            <h2>Testimonials</h2>
+            <div class="testimonial-slide-wrapper" aria-live="polite" aria-atomic="true">
+                <div id="testimonial-slider">
+                    <div class="testimonial-item" tabindex="0">
+                        <div class="client-photo">
+                            <img src="./New-Project-4-600x610.jpg" alt="Lukas Zerhun" />
+                        </div>
+                        <div class="testimonial-content">
+                            "Tekalign design transformed our website and boosted our client engagement tremendously."
+                            <b>Lukas Zerhun</b>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" tabindex="0">
+                        <div class="client-photo">
+                            <img src="./download.jpg" alt="Yonatane Temesegen" />
+                        </div>
+                        <div class="testimonial-content">
+                            "Professional, creative, and reliable — highly recommended!"
+                            <b>Yonatane Temesegen</b>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" tabindex="0">
+                        <div class="client-photo">
+                            <img src="./edom-600x333.jpg" alt="Edom Tilahun" />
+                        </div>
+                        <div class="testimonial-content">
+                            "The animations and responsiveness are fantastic; the site feels alive."
+                            <b>Edom Tilahun</b>
+                        </div>
+                    </div>
+                </div>
+                <div id="testimonial-controls">
+                    <button id="prev-testimonial" aria-label="Previous testimonial"
+                        title="Previous testimonial">&#9664;</button>
+                    <button id="next-testimonial" aria-label="Next testimonial"
+                        title="Next testimonial">&#9654;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" style="margin-top:100px; max-width:720px; text-align:center;">
+            <h2 style="color:#00ff99; margin-bottom:20px;">About Me</h2>
+            <div class="about-me-container" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="about-me-image"
+                    style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 25px 6px #00ff99aa; border: 4px solid #00ff99cc; margin-bottom: 20px;">
+                    <img src="#" alt="Photo of Tekalign" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <p style="color:#bbb; line-height:1.6;">I'm Tekalign, a passionate web developer specializing in
+                    crafting
+                    beautiful, user-friendly websites that are fully responsive and animated for an engaging user
+                    experience.
+                    With years of experience blending design and technology, I bring your ideas to life with code.</p>
+            </div>
+        </section>
+
+        <section id="contact" style="margin-top:100px; max-width:400px; width: 100%; text-align:center;">
+            <form id="contact-form" novalidate>
+                <h2>Contact Me</h2>
+                <div class="form-group">
+                    <label for="contact-name">Name *</label>
+                    <input type="text" id="contact-name" name="name" required autocomplete="name"
+                        placeholder="Your full name" />
+                    <div class="form-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email *</label>
+                    <input type="email" id="contact-email" name="email" required autocomplete="email"
+                        placeholder="tekiyeman@gmail.com" />
+                    <div class="form-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message *</label>
+                    <textarea id="contact-message" name="message" required placeholder="Your message here..."
+                        rows="4"></textarea>
+                    <div class="form-error" aria-live="polite"></div>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </section>
+
+        <section id="login" style="margin-top:100px; max-width:400px; width: 100%; text-align:center;">
+            <form id="login-form" novalidate>
+                <h2>Login</h2>
+                <div class="form-group">
+                    <label for="login-username">Username or Email *</label>
+                    <input type="text" id="login-username" name="username" required autocomplete="username"
+                        placeholder="Your username or email" />
+                    <div class="form-error" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password *</label>
+                    <input type="password" id="login-password" name="password" required autocomplete="current-password"
+                        placeholder="Your password" />
+                    <div class="form-error" aria-live="polite"></div>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container" role="contentinfo">
+            <div class="footer-col" aria-label="Company info">
+                <h4>MySite</h4>
+                <p>Building modern and stunning personal websites with animations and responsive design.</p>
+            </div>
+            <div class="footer-col" aria-label="Navigation links">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#testimonial">Testimonial</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" aria-label="Contact details">
+                <h4>Contact</h4>
+                <p class="footer-contact">Teki Web Developement<br /> Addis Ababa, Wachamo University<br />Email:
+                    tekiyeman@gmail.com<br />Phone: +251 722 401 455</p>
+            </div>
+            <div class="footer-col" aria-label="Social media links">
+                <h4>Follow Me</h4>
+                <ul>
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                    <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" aria-label="Legal and policies">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#" aria-label="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="#" aria-label="Terms of Service">Terms of Service</a></li>
+                    <li><a href="#" aria-label="Cookie Policy">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', toggleMenu);
+        menuBtn.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        }
+
+        // Highlight active nav link on click
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                // If mobile menu is open, close it after selecting
+                if (navMenu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Typing effect text
+        const animatedText = document.querySelector('.animated-text');
+        const phrases = [
+            "Web Developer",
+            "Front-end Developer",
+            "Animation Enthusiast",
+            "SEO Specialist",
+            "UX/UI Lover"
+        ];
+        let phraseIndex = 0;
+        let letterIndex = 0;
+        let typingSpeed = 120;
+        let deletingSpeed = 60;
+        let delayBetweenPhrases = 1600;
+        let isDeleting = false;
+
+        function type() {
+            const current = phraseIndex % phrases.length;
+            const fullText = phrases[current];
+
+            if (isDeleting) {
+                animatedText.textContent = fullText.substring(0, letterIndex - 1);
+                letterIndex--;
+                if (letterIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex++;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, deletingSpeed);
+                }
+            } else {
+                animatedText.textContent = fullText.substring(0, letterIndex + 1);
+                letterIndex++;
+                if (letterIndex === fullText.length) {
+                    isDeleting = true;
+                    setTimeout(type, delayBetweenPhrases);
+                } else {
+                    setTimeout(type, typingSpeed);
+                }
+            }
+        }
+        type();
+
+        // Testimonial slider
+        const testimonialSlider = document.getElementById('testimonial-slider');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+        const testimonialCount = testimonialSlider.children.length;
+        let testimonialIndex = 0;
+
+        function showTestimonial(index) {
+            testimonialSlider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            testimonialIndex = (testimonialIndex - 1 + testimonialCount) % testimonialCount;
+            showTestimonial(testimonialIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            testimonialIndex = (testimonialIndex + 1) % testimonialCount;
+            showTestimonial(testimonialIndex);
+        });
+
+        // Auto-slide testimonials every 8 seconds
+        setInterval(() => {
+            testimonialIndex = (testimonialIndex + 1) % testimonialCount;
+            showTestimonial(testimonialIndex);
+        }, 8000);
+
+        // Form validation helpers
+        function showError(input, message) {
+            const errorDiv = input.parentElement.querySelector('.form-error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            input.classList.add('input-error');
+        }
+
+        function clearError(input) {
+            const errorDiv = input.parentElement.querySelector('.form-error');
+            errorDiv.textContent = '';
+            errorDiv.style.display = 'none';
+            input.classList.remove('input-error');
+        }
+
+        // Validate email format simple regex
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let valid = true;
+
+            const nameInput = contactForm.elements['name'];
+            const emailInput = contactForm.elements['email'];
+            const messageInput = contactForm.elements['message'];
+
+            if (nameInput.value.trim() === '') {
+                showError(nameInput, 'Name is required');
+                valid = false;
+            } else {
+                clearError(nameInput);
+            }
+
+            if (emailInput.value.trim() === '') {
+                showError(emailInput, 'Email is required');
+                valid = false;
+            } else if (!isValidEmail(emailInput.value.trim())) {
+                showError(emailInput, 'Enter a valid email');
+                valid = false;
+            } else {
+                clearError(emailInput);
+            }
+
+            if (messageInput.value.trim() === '') {
+                showError(messageInput, 'Message cannot be empty');
+                valid = false;
+            } else {
+                clearError(messageInput);
+            }
+
+            if (valid) {
+                alert(`Thank you, ${nameInput.value.trim()}! Your message has been sent.`);
+                contactForm.reset();
+            }
+        });
+
+        // Login form submission
+        const loginForm = document.getElementById('login-form');
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let valid = true;
+
+            const usernameInput = loginForm.elements['username'];
+            const passwordInput = loginForm.elements['password'];
+
+            if (usernameInput.value.trim() === '') {
+                showError(usernameInput, 'Username or Email is required');
+                valid = false;
+            } else {
+                clearError(usernameInput);
+            }
+
+            if (passwordInput.value.trim() === '') {
+                showError(passwordInput, 'Password is required');
+                valid = false;
+            } else {
+                clearError(passwordInput);
+            }
+
+            if (valid) {
+                alert(`Welcome back, ${usernameInput.value.trim()}! (Demo login)`);
+                loginForm.reset();
+            }
+        });
+    </script>
+</body>
+
+</html>
